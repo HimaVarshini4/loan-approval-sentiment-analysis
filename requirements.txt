@@ -106,3 +106,5 @@ plotnine
 seaborn
 matplotlib
 joblib
+google-cloud-aiplatform
+google-cloud-logging
