@@ -13,7 +13,7 @@ current_dir = os.path.dirname(__file__)
 
 @st.cache_resource
 def load_model():
-    model_path = os.path.join('model/xgboostModel2.pkl')
+    model_path = os.path.join(current_dir, 'model', 'xgboostModel2.pkl')
     return joblib.load(model_path)
 
 def ValuePredictor(data=pd.DataFrame):
@@ -23,7 +23,7 @@ def ValuePredictor(data=pd.DataFrame):
 
 @st.cache_data
 def load_schema():
-    schema_path = os.path.join(current_dir, 'columns_set.json')
+    schema_path = os.path.join(current_dir, 'data', 'columns_set.json')
     with open(schema_path, 'r') as f:
         cols = json.loads(f.read())
     return cols['data_columns']
